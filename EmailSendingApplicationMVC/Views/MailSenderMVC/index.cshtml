@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<EmailSendingApplicationMVC.ViewModels.RespondMailSenderViewModel>
+
+    <h2 style="margin-left : 545px;">Mail Senders</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Mail Server Address</th>
+                <th>Enable SSL</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Port</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sender in Model)
+            {
+                <tr>
+                    <td>@sender.Id</td>
+                    <td>@sender.Email</td>
+                    <td>@sender.MailServerAddress</td>
+                    <td>@sender.EnableSSL</td>
+                    <td>@sender.Username</td>
+                    <td>@sender.MailPassword</td>
+                    <td>@sender.Port</td>
+                    <td>
+                        <a asp-controller="MailSenderMVC" asp-action="Edit" asp-route-id="@sender.Id">Edit</a> |
+                    </td>
+                    <td>
+                        <a asp-controller="MailSenderMVC" asp-action="Delete" asp-route-id="@sender.Id">Delete</a>
+                    <td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-controller="MailSenderMVC" asp-action="Create" class="btn btn-primary">Add New Mail Sender</a>
+    </div>

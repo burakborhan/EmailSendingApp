@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<EmailSendingApplicationMVC.ViewModels.RespondMailRecipientViewModel>
+
+    <h2 style="margin-left:540px;">Mail Recipients</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                <th>Birthday</th>
+                <th>Email</th>
+                <th>Home Phone No</th>
+                <th>Cell Phone No</th>
+                <th>Title</th>
+                <th>Workplace</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipient in Model)
+            {
+                <tr>
+                    <td>@recipient.Id</td>
+                    <td>@recipient.Name</td>
+                    <td>@recipient.Surname</td>
+                    <td>@recipient.Gender</td>
+                    <td>@recipient.Birthday.ToShortDateString()</td>
+                    <td>@recipient.Email</td>
+                    <td>@recipient.HomePhoneNo</td>
+                    <td>@recipient.CellPhoneNo</td>
+                    <td>@recipient.Title</td>
+                    <td>@recipient.WorkPlace</td>
+                    <td>
+                        <a asp-controller="MailRecipientMVC" asp-action="Edit" asp-route-id="@recipient.Id">Edit</a> |
+                    </td>
+                    <td>
+                        <a asp-controller="MailRecipientMVC" asp-action="Delete" asp-route-id="@recipient.Id">Delete</a>
+                    <td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-controller="MailRecipientMVC" asp-action="Create" class="btn btn-primary">Add New Mail Recipient</a>
+    </div>

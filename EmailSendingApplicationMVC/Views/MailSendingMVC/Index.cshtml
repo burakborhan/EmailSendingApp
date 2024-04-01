@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/css/sendMail.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <form id="filters">
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="text" id="surname" name="surname" placeholder="Surname">
+            <input type="text" id="gender" name="gender" placeholder="Gender">
+            <input type="number" id="minAge" name="minAge" placeholder="Min Age">
+            <input type="number" id="maxAge" name="maxAge" placeholder="Max Age"></br>
+            <input type="text" id="workplace" name="workplace" placeholder="Workplace">
+            <input type="text" id="homephoneNo" name="homephoneNo" placeholder="Homephone No">
+            <input type="text" id="cellphoneNo" name="cellphoneNo" placeholder="Cellphone No">
+            <input type="text" id="title" name="title" placeholder="Title">
+            <input type="text" id="email" name="email" placeholder="E-mail">
+
+            <input type="button" value="Filter Recipients" id="fillRecipient">
+        </form>
+    </div>
+
+    <form id="sendEmailForm">
+
+        <label id="senderLabel">Please Choose a Sender:</label>
+        <select id="senderId" name="senderId"></select><br><br>
+
+        <label id="recepientLabel">Recipients:</label>
+        <select id="recipientIds" name="recipientIds" multiple style="width: 100%;"></select><br><br>
+        <div class="subject">
+            <label id="subjectLabel">Subject: </label>
+            <input type="text" id="subject" name="subject"><br><br>
+        </div>
+        <br />
+        <div class="body">
+            <label id="bodyLabel">Body: </label>
+            <textarea style="margin-left:5px;" name="body" id="body"></textarea><br><br>
+        </div>
+        <div class="sendEmailButton">
+            <input class="button" type="button" value="Send Email" id="sendEmailButton">
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $.get('/MailSendingMVC/GetSenders', function (data) {
+                $.each(data, function (index, sender) {
+                    $('#senderId').append($('<option>', {
+                        value: sender.value,
+                        text: sender.text
+                    }));
+                });
+            });
+
+            // Populate Recipient IDs
+            $.get('/MailSendingMVC/GetRecipients', function (data) {
+                $.each(data, function (index, recipient) {
+                    $('#recipientIds').append($('<option>', {
+                        value: recipient.value,
+                        text: recipient.text
+                    }));
+                });
+            });
+
+            $('#sendEmailButton').click(function () {
+                var emailData = {
+                    senderId: $('#senderId').val(),
+                    recipientIds: $('#recipientIds').val(),
+                    subject: $('#subject').val(),
+                    body: $('#body').val()
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/SendEmail', // Assuming your API endpoint is at /SendEmail
+                    contentType: 'application/json',
+                    data: JSON.stringify(emailData),
+                    success: function (response) {
+                        console.log('Email sent successfully:', response);
+                        // Handle success response here
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error sending email:', error);
+                        // Handle error response here
+                    }
+                });
+            });
+
+            $('#fillRecipient').click(function () {
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var gender = $('#gender').val();
+                var minAge = $('#minAge').val();
+                var maxAge = $('#maxAge').val();
+                var email = $('#email').val();
+                var homephoneNo = $('#homephoneNo').val();
+                var cellphoneNo = $('#cellphoneNo').val();
+                var title = $('#title').val();
+                var workplace = $('#workplace').val();
+                $.get('/MailSendingMVC/GetRecipientsFromFilter?name=' + name + '&surname=' + surname + '&gender=' + gender + '&minAge=' + minAge + '&maxAge=' + maxAge + '&email=' + email + '&homephoneNo=' + homephoneNo + '&cellphoneNo=' + cellphoneNo + '&title=' + title + '&workplace=' + workplace, function (data) {
+                    $('#recipientIds').empty();
+
+                    $.each(data, function (index, recipient) {
+                        $('#recipientIds').append($('<option>', {
+                            value: recipient.value,
+                            text: recipient.text
+                        }));
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

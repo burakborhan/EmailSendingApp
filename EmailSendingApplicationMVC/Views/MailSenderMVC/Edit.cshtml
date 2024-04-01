@@ -1,0 +1,41 @@
+﻿@model EmailSendingApplication.DTO_s.RespondMailSenderDTO
+
+<h2>Edit Mail Sender</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MailServerAddress"></label>
+        <input asp-for="MailServerAddress" class="form-control" />
+        <span asp-validation-for="MailServerAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EnableSSL"></label>
+        <select asp-for="EnableSSL" class="form-control">
+            <option value="true">Enable</option>
+            <option value="false">Disable</option>
+        </select>
+        <span asp-validation-for="EnableSSL" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MailPassword"></label>
+        <input asp-for="MailPassword" class="form-control" />
+        <span asp-validation-for="MailPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Port"></label>
+        <input asp-for="Port" class="form-control" />
+        <span asp-validation-for="Port" class="text-danger"></span>
+    </div>
+    <button type="submit" value="Update" class="btn btn-primary">Edit</button>
+</form>
