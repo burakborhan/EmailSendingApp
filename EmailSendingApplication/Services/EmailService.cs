@@ -167,7 +167,6 @@ namespace EmailSendingApplication.Services
                 RecipientMails = recipientEmails,
             };
 
-            // SentMail objesini veritabanına ekleyerek sadece bir kayıt oluşturulmasını sağla
             _context.SentMail.Add(sentMail);
 
             sentMail.MailSenders = mailSender;

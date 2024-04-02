@@ -10,7 +10,7 @@ namespace EmailSendingApplicationMVC.Services
     public class MailSenderAPIService : IMailSenderAPIService
     {
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "https://localhost:7183/api/MailSender";
+        private const string BaseUrl = "https://'...'/api/MailSender";
 
         public MailSenderAPIService(HttpClient httpClient)
         {

@@ -6,7 +6,6 @@ namespace EmailSendingApplication.Data
 {
     public class AppDbContext : DbContext
     {
-
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
@@ -22,8 +21,6 @@ namespace EmailSendingApplication.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
             modelBuilder.Entity<MailRecipient>()
                     .Property(e => e.Birthday)
                     .HasColumnType("date");
@@ -31,10 +28,6 @@ namespace EmailSendingApplication.Data
             modelBuilder.Entity<SentMail>()
                     .Property(e => e.SendingDate)
                     .HasColumnType("date");
-
         }
-
-
-
     }
 }

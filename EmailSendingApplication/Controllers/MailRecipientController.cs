@@ -61,8 +61,6 @@ namespace EmailSendingApplication.Controllers
             }
         }
 
-        
-
         [HttpPut("{id}")]
         public async Task<IActionResult> EditMailRecipient(int id, RespondMailRecipientDTO mailRecipientDto)
         {

@@ -8,7 +8,7 @@ namespace EmailSendingApplicationMVC.Services
     public class MailRecipientAPIService : IMailRecipientAPIService
     {
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "https://localhost:7183/api/MailRecipient";
+        private const string BaseUrl = "https://'...'/api/MailRecipient";
 
         public MailRecipientAPIService(HttpClient httpClient)
         {

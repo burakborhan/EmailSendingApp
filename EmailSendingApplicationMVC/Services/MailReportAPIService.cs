@@ -11,7 +11,7 @@ namespace EmailSendingApplicationMVC.Services
     public class MailReportAPIService : IMailReportAPIService
     {
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "https://localhost:7183/api/MailSending";
+        private const string BaseUrl = "https://'...'/api/MailSending";
         private readonly AppDbContext _context;
 
         public MailReportAPIService(AppDbContext context, HttpClient httpClient)
