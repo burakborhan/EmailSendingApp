@@ -5,6 +5,23 @@
 <head>
     <title>Mail Reports</title>
     <link rel="stylesheet" href="~/css/site.css">
+    <style>
+        #selectedEmail {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 14px;
+}
+
+#selectedEmail:hover {
+    background-color: #e9e9e9;
+}
+    </style>
 </head>
 <body>
     <h1 style="margin-left : 545px;">Reports</h1>
@@ -17,7 +34,7 @@
                 <option value="@emailReport">@emailReport</option>
             }
         </select>
-        <button type="submit">Get Reports</button>
+        <button class="btn btn-primary" type="submit">Get Reports</button>
     </form>
 
     @if (Model != null && Model.Any())

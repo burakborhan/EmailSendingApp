@@ -19,6 +19,8 @@
                 <th>Cell Phone No</th>
                 <th>Title</th>
                 <th>Workplace</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -36,10 +38,10 @@
                     <td>@recipient.Title</td>
                     <td>@recipient.WorkPlace</td>
                     <td>
-                        <a asp-controller="MailRecipientMVC" asp-action="Edit" asp-route-id="@recipient.Id">Edit</a> |
+                        <a class="btn btn-warning" asp-controller="MailRecipientMVC" asp-action="Edit" asp-route-id="@recipient.Id">Edit</a> 
                     </td>
                     <td>
-                        <a asp-controller="MailRecipientMVC" asp-action="Delete" asp-route-id="@recipient.Id">Delete</a>
+                        <a class="btn btn-danger" asp-controller="MailRecipientMVC" asp-action="Delete" asp-route-id="@recipient.Id">Delete</a>
                     <td>
 
                 </tr>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uiXbn7m5IL/by6sou/gLeQZtHv+zU87ejudNgl652K8=",
+  "Hash": "ASev8ucNLb84M7F4eai1cIN7psVRvcj0DqFo/hEQRD0=",
   "Source": "EmailSendingApplicationMVC",
   "BasePath": "_content/EmailSendingApplicationMVC",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Burak\\source\\repos\\EmailSendingApplicationMVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EmailSendingApplicationMVC.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\Burak\\source\\repos\\EmailSendingApplicationMVC\\wwwroot\\css\\dropdownList.scss",
-      "SourceId": "EmailSendingApplicationMVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Burak\\source\\repos\\EmailSendingApplicationMVC\\wwwroot\\",
-      "BasePath": "_content/EmailSendingApplicationMVC",
-      "RelativePath": "css/dropdownList.scss",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\dropdownList.scss"
     },
     {
       "Identity": "C:\\Users\\Burak\\source\\repos\\EmailSendingApplicationMVC\\wwwroot\\css\\sendMail.css",
