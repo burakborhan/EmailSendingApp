@@ -16,6 +16,7 @@ In the MVC project, navigate to the files in the service folder and update the f
 
 private const string BaseUrl = "YOUR_HOST_HERE/api/....";
 Replace "YOUR_HOST_HERE" with your actual host address.
+Do the same thing for the connection string which is in appsettings.json file.
 
 Finally, right-click on the solution, choose Configure Startup Projects, and select the option to run both applications simultaneously.
  
