@@ -16,5 +16,6 @@ namespace EmailSendingApplication.DTO_s
         public string SenderMail { get; set; }
          public MailSenders MailSender { get; set; }
         public ICollection<string> RecipientMails { get; set; }
+        public List<MailRecipient> mailRecipients { get; set; }
     }
 }

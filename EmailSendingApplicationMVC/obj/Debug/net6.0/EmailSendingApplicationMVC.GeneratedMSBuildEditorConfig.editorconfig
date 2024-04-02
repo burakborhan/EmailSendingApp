@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbFJlY2lwaWVudE1WQ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Burak/source/repos/EmailSendingApplicationMVC/Views/MailReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbFJlcG9ydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Burak/source/repos/EmailSendingApplicationMVC/Views/MailSenderMVC/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbFNlbmRlck1WQ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

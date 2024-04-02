@@ -31,11 +31,6 @@ namespace EmailSendingApplicationMVC.Services
             return await _emailService.GetMailSendersAsync();
         }
 
-        //public async Task SendEmailAsync(int senderId, List<int> recipientIds, string subject, string body)
-        //{
-        //    await _emailService.SendEmailAsync(senderId, recipientIds, subject, body);
-        //}
-
         public async Task<string> SendEmailAsync(int senderId, List<int> recipientIds, string subject, string body)
         {
             await _emailService.SendEmailAsync(senderId, recipientIds, subject, body);

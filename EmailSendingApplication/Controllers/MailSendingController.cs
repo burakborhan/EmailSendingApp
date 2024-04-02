@@ -24,7 +24,15 @@ namespace EmailSendingApplication.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RespondSentMailDTO>>> GetEmailReports(string senderEmail)
+        public async Task<ActionResult<IEnumerable<RespondSentMailDTO>>> GetMailReports()
+        {
+            var mailReports = await _context.SentMail.ToListAsync();
+            var mailReportsDtos = _mapper.Map<List<RespondSentMailDTO>>(mailReports);
+            return mailReportsDtos;
+        }
+
+        [HttpGet("mail")]
+        public async Task<ActionResult<IEnumerable<RespondSentMailDTO>>> GetEmailReportsByEmail(string senderEmail)
         {
             var sentMails = await _context.SentMail
                 .Where(mail => mail.SenderMail == senderEmail)

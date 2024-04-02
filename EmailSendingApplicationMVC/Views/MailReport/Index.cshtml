@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EmailSendingApplication.DTO_s.RespondSentMailDTO>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mail Reports</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <h1 style="margin-left : 545px;">Reports</h1>
+
+    <form method="get" action="GetSelectedEmailReports">
+        <label for="selectedEmail">Select Email:</label>
+        <select id="selectedEmail" name="selectedEmail">
+            @foreach (var emailReport in ViewBag.EmailList)
+            {
+                <option value="@emailReport">@emailReport</option>
+            }
+        </select>
+        <button type="submit">Get Reports</button>
+    </form>
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table table-striped">
+            <tr>
+                <th>Subject</th>
+                <th>Body</th>
+                <th>Sending Date</th>
+                <th>Transmission Status</th>
+                <th>Recipients</th>
+            </tr>
+            @foreach (var report in Model)
+            {
+                <tr>
+                    <td>@report.Subject</td>
+                    <td>@report.Body</td>
+                    <td>@report.SendingDate</td>
+                    <td>@report.TransmissionStatus</td>
+                    <td>
+                        <ul>
+                            @foreach (var recipient in report.RecipientMails)
+                            {
+                                <li>@recipient</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</body>
+</html>
+<script>
+    $('.dropdown-el').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).toggleClass('expanded');
+        $('#' + $(e.target).attr('for')).prop('checked', true);
+    });
+    $(document).click(function () {
+        $('.dropdown-el').removeClass('expanded');
+    });
+</script>

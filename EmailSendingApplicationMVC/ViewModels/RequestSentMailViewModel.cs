@@ -11,6 +11,7 @@ namespace EmailSendingApplicationMVC.ViewModels
         public DateTime SendingDate { get; set; }
         public bool TransmissionStatus { get; set; }
         public MailSenders MailSender { get; set; }
+        public IEnumerable<MailSenders> MailSenderList { get; set; }
         public List<MailRecipient> mailRecipients { get; set; }
     }
 }

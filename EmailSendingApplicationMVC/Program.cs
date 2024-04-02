@@ -16,6 +16,7 @@ builder.Services.AddAutoMapper(typeof(MapProfile));
 builder.Services.AddScoped<IMailSenderAPIService, MailSenderAPIService>();
 builder.Services.AddScoped<IMailRecipientAPIService,MailRecipientAPIService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IMailReportAPIService, MailReportAPIService>();
 builder.Services.AddScoped<IMailSendingAPIService, MailSendingAPIService>();
 
 builder.Services.AddHttpClient();

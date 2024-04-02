@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\EmailSendingApplicationMVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Burak\\source\\repos\\EmailSendingApplicationMVC\\wwwroot\\css\\dropdownList.scss",
+      "PackagePath": "staticwebassets\\css\\dropdownList.scss"
+    },
+    {
       "Id": "C:\\Users\\Burak\\source\\repos\\EmailSendingApplicationMVC\\wwwroot\\css\\sendMail.css",
       "PackagePath": "staticwebassets\\css\\sendMail.css"
     },
